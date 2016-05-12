@@ -1,5 +1,3 @@
-# NodeJS Logins Starter
+# Facebook-Auth
 
-A boilerplate for different login strategies
-
-
+A boilerplate for Facebook-Auth with MongoDB
