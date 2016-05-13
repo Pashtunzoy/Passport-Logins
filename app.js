@@ -11,7 +11,7 @@ var expressLayouts=require("express-ejs-layouts");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
-
+require('dotenv').config();
 // App Intialisation
 var app = express();
 
@@ -28,7 +28,6 @@ app.use(expressLayouts);
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
-  indentedSyntax: true,
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
