@@ -1,8 +1,24 @@
-<h1>From
-<% if(user.facebook) {%>
-  Facebook
-<% } %>
-Login
-</h1>
-<h2>Name: <%= user.displayName %></h2>
-<h2>Email: <%= user.email %></h2>
+  <h1>User Profile:</h1>
+<div class="row">
+ <div class="col s12 m8 l4">
+   <div class="card">
+     <div class="card-image">
+       <% if(user.facebook) {%>
+       <img src="http://www.asthmamd.org/images/icon_user_1.png">
+       <% } else {%>
+          <img src=<%= user.image%> alt="">
+       <% }%>
+       <span class="card-title">
+       </span>
+     </div>
+    <div class="card-content">
+       <h1>
+       </h1>
+       <h3 class="center-align"><%= user.displayName %></h3>
+       <% if(!user.twitter || !user.github) {%>
+       <p>Email: <%= user.email %></p>
+       <%}%>
+     </div>
+     </div>
+   </div>
+ </div>

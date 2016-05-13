@@ -1,0 +1,18 @@
+@import "../../node_modules/font-awesome/scss/font-awesome.scss";
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.index-main {
+  margin-top: 10%;
+}
+
+main .fa-5x {
+  font-size: 6vw;
+  padding-left: 3rem;
+}

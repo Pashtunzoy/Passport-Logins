@@ -4,13 +4,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>NodeJs Logins</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/materialize.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/materialize.css" >
+    <link rel='stylesheet'  href='/stylesheets/style.css' >
   </head>
   <body>
-    <h1>NodeJs Logins</h1>
-    <%- body %>
-    <script src="/javascript/jquery.min.js"></script>
-    <script src="/javascript/materialize.js"></script>
+    <header>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/login">Sign In</a></li>
+        <li class="divider"></li>
+        <li><a href="/signout">Sing Out</a></li>
+        <li class="divider"></li>
+        <li><a href="/signup">Sign Up</a></li>
+      </ul>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">NodeJs Logins</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Local<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="/auth/facebook">Facebook</a></li>
+            <li><a href="/auth/google">Google</a></li>
+            <li><a href="/auth/twitter">Twitter</a></li>
+            <li><a href="/auth/github">Github</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <%- body %>
+    </div>
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/materialize.js"></script>
   </body>
 </html>
