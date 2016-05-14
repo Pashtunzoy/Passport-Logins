@@ -3,7 +3,7 @@
  <div class="col s12 m8 l4">
    <div class="card">
      <div class="card-image">
-       <% if(user.facebook) {%>
+       <% if(user.facebook || user.username === "asif") {%>
        <img src="http://www.asthmamd.org/images/icon_user_1.png">
        <% } else {%>
           <img src=<%= user.image%> alt="">

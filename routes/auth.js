@@ -10,7 +10,6 @@ auth.route('/facebook/callback')
       failureRedirect: '/error'
 }));
 
-
 auth.route('/google')
   .get(passport.authenticate('google', {
       scope: ['https://www.googleapis.com/auth/userinfo.profile',
@@ -32,11 +31,16 @@ auth.route('/twitter/callback')
 
 auth.route('/github')
   .get(passport.authenticate('github', { scope: [ 'user:email' ] }));
-
 auth.route('/github/callback')
   .get(passport.authenticate('github', {
     successRedirect: '/users',
     failureRedirect: '/error'
 }));
+//
+// auth.route('/signup')
+//   .post(passport.authenticate('local', {
+//     successRedirect: '/users',
+//     failureRedirect: '/login'
+// }));
 
 module.exports = auth;

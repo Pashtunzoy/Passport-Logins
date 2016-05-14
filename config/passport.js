@@ -13,4 +13,5 @@ module.exports = function(app) {
   require('./strategies/google.strategy.js')();
   require('./strategies/twitter.strategy.js')();
   require('./strategies/github.strategy.js')();
+  require('./strategies/local.strategy.js')();
 };

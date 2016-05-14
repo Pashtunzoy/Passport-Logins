@@ -33,7 +33,7 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 // app.disable('etag');
 // The secret is just needed by the express session and is not going to be used anywhere.
-app.use(session({secret: 'your secret'}));
+app.use(session({secret: 'your secret', resave: false, saveUninitialized: false}));
 
 // Connecting Passport and passing the app instance
 app.use(passport.initialize());
