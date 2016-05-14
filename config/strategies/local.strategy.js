@@ -1,21 +1,25 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+
 module.exports = function() {
   var user = {
-    username: 'asep@gmail.com',
+    email: 'asep@gmail.com',
+    name: 'Asif',
     password: 'Asif1994'
   };
   passport.use(new LocalStrategy({
-      passReqToCallback: true
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
   },
-  function(req, username, password, done) {
+  function(req, email, password, done) {
     console.log('it worked');
     process.nextTick(function () {
-      if(username === user.username && password === user.password) {
+      if(email === user.email && password === user.password) {
         // user.email = profile;
         // user.image = profile._json.avatar_url;
-        user.displayName = username;
-        // user.email = email;
+        user.displayName = user.name;
+        user.email = user.email;
         console.log(user);
         return done(null, user);
       }

@@ -36,11 +36,5 @@ auth.route('/github/callback')
     successRedirect: '/users',
     failureRedirect: '/error'
 }));
-//
-// auth.route('/signup')
-//   .post(passport.authenticate('local', {
-//     successRedirect: '/users',
-//     failureRedirect: '/login'
-// }));
 
 module.exports = auth;

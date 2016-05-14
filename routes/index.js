@@ -11,14 +11,14 @@ router.get('/login', function(req, res) {
   res.render('signin');
 });
 
+router.get('/signup', function(req, res) {
+  res.render('signup');
+});
+
 router.post('/signup',
   passport.authenticate('local', {
     successRedirect: '/users',
     failureRedirect: '/signup'
 }));
-
-router.get('/signup', function(req, res) {
-  res.render('signup');
-});
 
 module.exports = router;
