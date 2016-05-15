@@ -1,9 +1,12 @@
 <h1>Sign In</h1>
+<% if (message.length > 0) { %>
+  <div class="alert-danger"><%= message %></div>
+<% } %>
 <div class="row">
   <form action="/login" method="post">
   <div class="row">
     <div class="input-field col s12">
-      <input id="email" type="text" name="username" class="validate">
+      <input id="email" type="text" name="email" class="validate">
       <label for="email">Email</label>
     </div>
   </div>
