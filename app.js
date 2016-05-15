@@ -6,18 +6,28 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
-var expressLayouts=require("express-ejs-layouts");
+var expressLayouts = require("express-ejs-layouts");
+var mongoose = require('mongoose');
+var flash = require('connect-flash');
+
 // Our Routes to Index, User, Auth
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
+
+// Get the envirment variables from .env file
 require('dotenv').config();
+
 // App Intialisation
 var app = express();
+
+// Open connection to mongodb
+var db = mongoose.connect('mongodb://localhost/passportLogins');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -33,11 +43,17 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 // app.disable('etag');
 // The secret is just needed by the express session and is not going to be used anywhere.
-app.use(session({secret: 'your secret', resave: false, saveUninitialized: false}));
+
+app.use(session({
+  secret: 'your secret',
+  resave: false,
+  saveUninitialized: false
+}));
 
 // Connecting Passport and passing the app instance
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 require('./config/passport.js')(app);
 
 
