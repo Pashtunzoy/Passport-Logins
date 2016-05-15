@@ -1,5 +1,9 @@
 @import "../../node_modules/font-awesome/scss/font-awesome.scss";
 
+
+$font-stack:    AnanoymousPro, Helvetica, sans-serif;
+$error-color: rgba(255, 113, 113, 0.87);
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -15,4 +19,15 @@ a {
 main .fa-5x {
   font-size: 6vw;
   padding-left: 3rem;
+}
+
+.dropdown-content {
+  margin-top: 4%;
+}
+
+.alert-danger {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  background-color: $error-color;
 }
