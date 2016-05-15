@@ -10,21 +10,30 @@
   <body>
     <header>
       <ul id="dropdown1" class="dropdown-content">
-        <li><a href="/login">Sign In</a></li>
-        <li class="divider"></li>
-        <li><a href="/signout">Sing Out</a></li>
-        <li class="divider"></li>
-        <li><a href="/signup">Sign Up</a></li>
+        <% if (login) {%>
+          <li class="divider"></li>
+          <li><a href="/signout" class="signout">Sing Out</a></li>
+        <%} else {%>
+          <li><a href="/login">Sign In</a></li>
+          <li class="divider"></li>
+          <li class="divider"></li>
+          <li><a href="/signup">Sign Up</a></li>
+        <% } %>
       </ul>
       <nav>
         <div class="nav-wrapper">
           <a href="/" class="brand-logo">NodeJs Logins</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Local<i class="material-icons right">arrow_drop_down</i></a></li>
+          <% if (login) {%>
+            <li><a href="/signout" class="signout">Sing Out</a></li>
+            <li><a href="/users">Profile</a></li>
+          <%} else {%>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Local<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="/auth/facebook">Facebook</a></li>
             <li><a href="/auth/google">Google</a></li>
             <li><a href="/auth/twitter">Twitter</a></li>
             <li><a href="/auth/github">Github</a></li>
+          <% } %>
           </ul>
         </div>
       </nav>
