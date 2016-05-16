@@ -2191,4 +2191,10 @@ main .fa-5x {
   color: #333;
   background-color: rgba(255, 113, 113, 0.87); }
 
+nav i.material-icons {
+  line-height: 63px; }
+
+.mob-nav {
+  padding-left: 10px; }
+
 /*# sourceMappingURL=style.css.map */

@@ -25,6 +25,7 @@ main .fa-5x {
   margin-top: 3%;
 }
 
+
 .alert-danger {
   border: 1px solid #ccc;
   padding: 10px;
@@ -32,13 +33,10 @@ main .fa-5x {
   background-color: $error-color;
 }
 
-// 
-// header, main, footer {
-//   padding-left: 240px;
-// }
-//
-// @media only screen and (max-width : 992px) {
-//   header, main, footer {
-//     padding-left: 0;
-//   }
-// }
+nav i.material-icons {
+   line-height: 63px;
+}
+
+.mob-nav {
+  padding-left: 10px;
+}
