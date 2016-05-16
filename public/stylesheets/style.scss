@@ -22,7 +22,7 @@ main .fa-5x {
 }
 
 .dropdown-content {
-  margin-top: 4%;
+  margin-top: 3%;
 }
 
 .alert-danger {
@@ -31,3 +31,14 @@ main .fa-5x {
   color: #333;
   background-color: $error-color;
 }
+
+// 
+// header, main, footer {
+//   padding-left: 240px;
+// }
+//
+// @media only screen and (max-width : 992px) {
+//   header, main, footer {
+//     padding-left: 0;
+//   }
+// }
