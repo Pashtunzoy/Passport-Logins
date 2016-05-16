@@ -22,7 +22,7 @@ require('dotenv').config();
 var app = express();
 
 // Open connection to mongodb
-var db = mongoose.connect('mongodb://localhost/passportLogins');
+var db = mongoose.connect(process.env.MONGODB_URL);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
