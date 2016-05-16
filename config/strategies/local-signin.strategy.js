@@ -12,7 +12,7 @@ module.exports = function() {
     process.nextTick(function () {
       var user = {};
       var query = {
-        'local.email': email
+        'local.email': email.toLowerCase()
       };
 
       User.findOne(query, function(err, user) {

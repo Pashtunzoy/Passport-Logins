@@ -33,7 +33,7 @@ module.exports = function() {
             console.log(error);
             if(user) {
               user.local.name = req.param('name');
-              user.local.email = email;
+              user.local.email = email.toLowerCase();
               user.local.password = user.generateHash(password);
               user.save();
               done(null, user);
@@ -49,7 +49,7 @@ module.exports = function() {
           } else {
             var user = new User();
             user.local.name = req.param('name');
-            user.local.email = email;
+            user.local.email = email.toLowerCase();
             user.local.password = user.generateHash(password);
             user.save();
             done(null, user);
